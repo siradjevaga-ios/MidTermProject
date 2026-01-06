@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "name": "Artsy",
+    "price": "$564",
+    "imageName": "artsy_bag",
+    "description": "Wallet with chain. Elegant design with premium leather."
+  },
+  {
+    "id": 2,
+    "name": "Berkely",
+    "price": "$638",
+    "imageName": "berkely_bag",
+    "description": "Classic handbag with modern details and solid finish."
+  },
+  {
+    "id": 3,
+    "name": "Capucinus",
+    "price": "$1298",
+    "imageName": "capucinus_bag",
+    "description": "Luxury bag crafted from high quality materials."
+  },
+  {
+    "id": 4,
+    "name": "Monogram",
+    "price": "$1638",
+    "imageName": "monogram_bag",
+    "description": "Iconic monogram style handbag with spacious interior."
+  }
+]
+
+
