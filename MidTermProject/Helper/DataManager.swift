@@ -5,6 +5,8 @@
 //  Created by user on 06.01.26.
 //
 
+// DataManager handles products and basket logic
+
 import Foundation
 
 class DataManager {
