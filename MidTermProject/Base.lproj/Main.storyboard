@@ -419,7 +419,7 @@
         <!--Home View Controller-->
         <scene sceneID="2Pg-J5-nOW">
             <objects>
-                <viewController id="pFl-Af-2P8" customClass="HomeViewController" customModule="MidTermProject" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeViewController" id="pFl-Af-2P8" customClass="HomeViewController" customModule="MidTermProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gc0-dP-zt5">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

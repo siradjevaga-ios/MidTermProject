@@ -16,7 +16,11 @@ class MainTabBarController: UITabBarController {
     }
     
     private func configureUI() {
-        let home = HomeViewController()
+//        let home = HomeViewController()
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let home = storyboard.instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
+
         let search = SearchViewController()
         let wishList = WishListViewController()
         let cart = CartViewController()
