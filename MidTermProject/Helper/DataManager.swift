@@ -6,7 +6,6 @@
 //
 
 // DataManager handles products and basket logic
-
 import Foundation
 
 class DataManager {
@@ -19,7 +18,7 @@ class DataManager {
             return products
         } catch {
             print(error.localizedDescription)
-            return[]
+            return []
         }
         
     }

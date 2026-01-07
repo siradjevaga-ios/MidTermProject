@@ -416,6 +416,43 @@
             </objects>
             <point key="canvasLocation" x="1188.5496183206105" y="107.74647887323944"/>
         </scene>
+        <!--Home View Controller-->
+        <scene sceneID="2Pg-J5-nOW">
+            <objects>
+                <viewController id="pFl-Af-2P8" customClass="HomeViewController" customModule="MidTermProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gc0-dP-zt5">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="93H-4V-Knl">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="EMp-wX-cZV">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Tm6-Hv-zC5"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="93H-4V-Knl" firstAttribute="leading" secondItem="Tm6-Hv-zC5" secondAttribute="leading" id="9sh-Zr-71N"/>
+                            <constraint firstItem="93H-4V-Knl" firstAttribute="trailing" secondItem="Tm6-Hv-zC5" secondAttribute="trailing" id="SQ2-1u-RgW"/>
+                            <constraint firstAttribute="bottom" secondItem="93H-4V-Knl" secondAttribute="bottom" id="Y8M-dI-GiC"/>
+                            <constraint firstItem="93H-4V-Knl" firstAttribute="top" secondItem="gc0-dP-zt5" secondAttribute="top" id="wqf-89-sWt"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="collection" destination="93H-4V-Knl" id="2gb-TD-ccn"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7d5-0G-DHb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1915.2671755725189" y="108.45070422535211"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="mJ9-Qc-WZC">
             <objects>
