@@ -3,8 +3,8 @@
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="24063"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -41,6 +41,9 @@
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="heart" catalog="system"/>
+                                <connections>
+                                    <action selector="heartButtonTapped:" destination="gTV-IL-0wX" eventType="touchUpInside" id="lye-7h-n0k"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" verticalCompressionResistancePriority="751" text="priceLabel" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O9P-QB-AeJ">
                                 <rect key="frame" x="8" y="177.66666666666666" width="353" height="47.333333333333343"/>
@@ -49,7 +52,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="cellColor"/>
                         <constraints>
                             <constraint firstItem="gcK-Lp-OMg" firstAttribute="leading" secondItem="qBX-js-9m2" secondAttribute="leading" id="4hN-PY-DAN"/>
                             <constraint firstAttribute="trailing" secondItem="gcK-Lp-OMg" secondAttribute="trailing" id="9Zn-pr-yob"/>
@@ -68,6 +71,7 @@
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <color key="backgroundColor" name="cellColor"/>
             <constraints>
                 <constraint firstItem="qBX-js-9m2" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="GlS-6L-lob"/>
                 <constraint firstAttribute="trailing" secondItem="qBX-js-9m2" secondAttribute="trailing" id="PvC-IE-gPx"/>
@@ -77,6 +81,7 @@
             <size key="customSize" width="369" height="233"/>
             <connections>
                 <outlet property="bagzImage" destination="gcK-Lp-OMg" id="4WP-aW-th8"/>
+                <outlet property="heartButton" destination="8d1-OC-Y9a" id="jIt-ZL-mA1"/>
                 <outlet property="nameLabel" destination="liZ-0w-s1Z" id="WCU-0h-r2V"/>
                 <outlet property="priceLabel" destination="O9P-QB-AeJ" id="8z3-uE-jBT"/>
             </connections>
@@ -85,8 +90,8 @@
     </objects>
     <resources>
         <image name="heart" catalog="system" width="128" height="107"/>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
+        <namedColor name="cellColor">
+            <color red="0.94509803921568625" green="0.94509803921568625" blue="0.94509803921568625" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
 </document>

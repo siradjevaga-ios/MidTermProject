@@ -19,7 +19,7 @@ class HomeViewController: UIViewController {
         collection.dataSource = self
         collection.register(UINib(nibName: "ProductCell", bundle: nil), forCellWithReuseIdentifier: "ProductCell")
         products = dataManager.getBagzItems()
-        print(products.count)
+//        print(products.count)
     }
     
 
@@ -39,7 +39,12 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        .init(width: 160, height: 160)
+        .init(width: 168, height: 240)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let product = products[indexPath.row]
+        print(product.name)
     }
 }
 
