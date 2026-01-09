@@ -451,7 +451,44 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7d5-0G-DHb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1915.2671755725189" y="108.45070422535211"/>
+            <point key="canvasLocation" x="1877" y="108"/>
+        </scene>
+        <!--Wish List View Controller-->
+        <scene sceneID="uqJ-7M-0FS">
+            <objects>
+                <viewController storyboardIdentifier="WishListViewController" id="LIj-vd-Ikh" customClass="WishListViewController" customModule="MidTermProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ATT-pH-NsW">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="2Cj-cu-b0G">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="12" minimumInteritemSpacing="10" id="JDt-J0-omj">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="16" minY="16" maxX="16" maxY="16"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="hZP-f3-y0E"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="2Cj-cu-b0G" firstAttribute="leading" secondItem="hZP-f3-y0E" secondAttribute="leading" id="5bu-Jf-2dE"/>
+                            <constraint firstAttribute="bottom" secondItem="2Cj-cu-b0G" secondAttribute="bottom" id="Q2x-sk-4ik"/>
+                            <constraint firstItem="2Cj-cu-b0G" firstAttribute="trailing" secondItem="hZP-f3-y0E" secondAttribute="trailing" id="dcC-EU-9yc"/>
+                            <constraint firstItem="2Cj-cu-b0G" firstAttribute="top" secondItem="ATT-pH-NsW" secondAttribute="top" id="odJ-5Z-7D3"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="collection" destination="2Cj-cu-b0G" id="jba-JI-LFU"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WUZ-0L-HyK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2565.6488549618321" y="107.74647887323944"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="mJ9-Qc-WZC">
@@ -481,7 +518,7 @@
             <color red="0.89803921568627454" green="0.89803921568627454" blue="0.89803921568627454" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="secondaryLabelColor">
-            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
