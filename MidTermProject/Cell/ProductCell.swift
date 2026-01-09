@@ -10,6 +10,10 @@ import UIKit
 class ProductCell: UICollectionViewCell {
     
     private var isLiked = false
+//    private let wishKey = "wishList"
+    private var productId: Int!
+
+
     
     @IBOutlet weak var bagzImage: UIImageView!
     
@@ -26,9 +30,13 @@ class ProductCell: UICollectionViewCell {
     }
     
     func configureUI(product: Product) {
+        productId = product.id
         nameLabel.text = product.name
         priceLabel.text = "\(product.price)₼"
         bagzImage.image = UIImage(named: product.imageName)
+        let wishList = getWishList()
+        isLiked = wishList.contains(product.id)
+        updateHeart()
         
     }
     
@@ -43,6 +51,13 @@ class ProductCell: UICollectionViewCell {
         heartButton.setImage(UIImage(systemName: heartImage), for: .normal)
     }
     
+    private func saveWishList(_ list: [Int]) {
+        UserDefaults.standard.set(list, forKey: "wishList")
+    }
+    
+    private func getWishList() -> [Int] {
+        UserDefaults.standard.array(forKey: "wishList") as? [Int] ?? []
+    }
     
     
 }
