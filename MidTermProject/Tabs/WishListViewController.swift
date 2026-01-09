@@ -8,22 +8,30 @@
 import UIKit
 
 class WishListViewController: UIViewController {
+    private var allProducts = [Product]()
+    private var wishListProducts = [Product]()
+    private var wishList = "wishKey"
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+       
     }
     
+   
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    private func getWishList() -> [Int] {
+        UserDefaults.standard.array(forKey: wishList) as? [Int] ?? []
+        
     }
-    */
+    
+    private func loadWishListProducts() {
+        var wishIds = getWishList()
+        wishListProducts = allProducts.filter({ product in
+            wishIds.contains(product.id)
+        })
+    }
+
 
 }

@@ -10,7 +10,7 @@ import UIKit
 class ProductCell: UICollectionViewCell {
     
     private var isLiked = false
-//    private let wishKey = "wishList"
+    private let wishKey = "wishList"
     private var productId: Int!
 
 
@@ -42,6 +42,13 @@ class ProductCell: UICollectionViewCell {
     
     
     @IBAction func heartButtonTapped(_ sender: Any) {
+        var wishlist = getWishList()
+        if isLiked {
+            wishlist.removeAll { $0 == productId }
+        } else {
+            wishlist.append(productId)
+        }
+        saveWishList(wishlist)
         isLiked.toggle()
         updateHeart()
     }
@@ -52,11 +59,11 @@ class ProductCell: UICollectionViewCell {
     }
     
     private func saveWishList(_ list: [Int]) {
-        UserDefaults.standard.set(list, forKey: "wishList")
+        UserDefaults.standard.set(list, forKey: wishKey)
     }
     
     private func getWishList() -> [Int] {
-        UserDefaults.standard.array(forKey: "wishList") as? [Int] ?? []
+        UserDefaults.standard.array(forKey: wishKey) as? [Int] ?? []
     }
     
     

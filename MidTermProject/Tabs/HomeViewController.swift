@@ -33,8 +33,8 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ProductCell", for: indexPath) as! ProductCell
-        let product = products[indexPath.row]
-        cell.configureUI(product: product)
+        let items = products[indexPath.row]
+        cell.configureUI(product: items)
         return cell
     }
     
