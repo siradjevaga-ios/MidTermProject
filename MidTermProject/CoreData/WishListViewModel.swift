@@ -37,4 +37,17 @@ class WishListViewModel {
         }
     }
     
+    private func deleteItem(at index: Int) {
+        let item = items[index]
+        context.delete(item)
+        
+        do {
+            try context.save()
+            items.remove(at: index)
+        } catch {
+            print(error.localizedDescription)
+        }
+        
+    }
+    
 }

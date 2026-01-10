@@ -11,6 +11,8 @@ class WishListViewController: UIViewController {
     
     
     @IBOutlet weak var collection: UICollectionView!
+    
+    private let viewModel = WishListViewModel()
     private var allProducts = [Product]()
     private var wishListProducts = [Product]()
     private let wishListKey = "wishList"
