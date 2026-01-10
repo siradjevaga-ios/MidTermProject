@@ -24,5 +24,5 @@ extension WishEntity {
 }
 
 extension WishEntity : Identifiable {
-
+    
 }
