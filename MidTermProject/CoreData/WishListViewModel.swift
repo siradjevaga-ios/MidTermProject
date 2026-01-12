@@ -16,7 +16,7 @@ class WishListViewModel {
     var items: [WishEntity] = []
     
     
-    private func fetchItems() {
+     func fetchItems() {
         do {
             items = try context.fetch(WishEntity.fetchRequest())
         } catch {
@@ -24,7 +24,7 @@ class WishListViewModel {
         }
     }
     
-    private func addItems(productId: Int64, userId: Int64) {
+     func addItem(productId: Int64, userId: Int64) {
         let item = WishEntity(context: context)
         item.productId = productId
         item.userId = userId
@@ -37,7 +37,7 @@ class WishListViewModel {
         }
     }
     
-    private func deleteItem(at index: Int) {
+     func deleteItem(at index: Int) {
         let item = items[index]
         context.delete(item)
         
@@ -49,5 +49,18 @@ class WishListViewModel {
         }
         
     }
+    
+    func getProduct(at index: Int) -> Product? {
+        let wishItem = items[index]
+        let allProdcuts = DataManager().getBagzItems()
+        return allProdcuts.first { $0.id == wishItem.productId }
+    }
+    
+    func deleteItemByProductId(productId: Int64) {
+        if let index = items.firstIndex(where: { $0.productId == productId }) {
+            deleteItem(at: index)
+        }
+    }
+
     
 }

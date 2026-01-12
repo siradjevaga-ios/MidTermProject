@@ -9,12 +9,6 @@ import UIKit
 
 class ProductCell: UICollectionViewCell {
     
-    private var isLiked = false
-    private let wishKey = "wishList"
-    private var productId: Int!
-
-
-    
     @IBOutlet weak var bagzImage: UIImageView!
     
     @IBOutlet weak var nameLabel: UILabel!
@@ -23,47 +17,38 @@ class ProductCell: UICollectionViewCell {
     
     @IBOutlet weak var heartButton: UIButton!
     
+    var onHeartTapped: ((Int, Bool) -> Void)?
+    private var isLiked = false
+    private var productId: Int!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         
     }
     
-    func configureUI(product: Product) {
+    func configureUI(product: Product, isLiked: Bool) {
         productId = product.id
         nameLabel.text = product.name
         priceLabel.text = "\(product.price)₼"
         bagzImage.image = UIImage(named: product.imageName)
-        let wishList = getWishList()
-        isLiked = wishList.contains(product.id)
+
+        self.isLiked = isLiked
         updateHeart()
-        
     }
+
     
     
     @IBAction func heartButtonTapped(_ sender: Any) {
-        var wishlist = getWishList()
-        if isLiked {
-            wishlist.removeAll { $0 == productId }
-        } else {
-            wishlist.append(productId)
-        }
-        saveWishList(wishlist)
         isLiked.toggle()
         updateHeart()
+        onHeartTapped?(productId, isLiked)
     }
+  
+
     
     func updateHeart() {
         let heartImage = isLiked ? "heart.fill" : "heart"
         heartButton.setImage(UIImage(systemName: heartImage), for: .normal)
-    }
-    
-    private func saveWishList(_ list: [Int]) {
-        UserDefaults.standard.set(list, forKey: wishKey)
-    }
-    
-    private func getWishList() -> [Int] {
-        UserDefaults.standard.array(forKey: wishKey) as? [Int] ?? []
     }
     
     

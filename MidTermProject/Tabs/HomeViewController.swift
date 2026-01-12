@@ -8,10 +8,12 @@
 import UIKit
 
 class HomeViewController: UIViewController {
-    private var products = [Product]()
-    private let dataManager = DataManager()
+  
     
     @IBOutlet weak var collection: UICollectionView!
+    private let wishViewModel = WishListViewModel()
+    private var products = [Product]()
+    private let dataManager = DataManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,10 +21,9 @@ class HomeViewController: UIViewController {
         collection.dataSource = self
         collection.register(UINib(nibName: "ProductCell", bundle: nil), forCellWithReuseIdentifier: "ProductCell")
         products = dataManager.getBagzItems()
-//        print(products.count)
     }
     
-
+    
 }
 
 extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
@@ -33,11 +34,29 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ProductCell", for: indexPath) as! ProductCell
-        let items = products[indexPath.row]
-        cell.configureUI(product: items)
+        let product = products[indexPath.row]
+        let isLiked = wishViewModel.items.contains {
+            $0.productId == Int64(product.id)
+        }
+        cell.configureUI(product: product, isLiked: isLiked)
+        cell.onHeartTapped = { [weak self] productId, isLiked in
+            guard let self = self else { return }
+            
+            if isLiked {
+                self.wishViewModel.addItem(
+                    productId: Int64(productId),
+                    userId: 0
+                )
+            } else {
+                self.wishViewModel.deleteItemByProductId(
+                    productId: Int64(productId)
+                )
+            }
+        }
+        
         return cell
     }
-    
+
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         .init(width: 168, height: 240)
     }
