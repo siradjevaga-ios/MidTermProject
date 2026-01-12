@@ -14,30 +14,31 @@
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.90000000000000002" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="TQm-2w-v1o">
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="headerPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="TQm-2w-v1o">
                     <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
-                    <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </imageView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cSF-5r-c4O">
-                    <rect key="frame" x="229" y="382" width="148" height="88"/>
+                    <rect key="frame" x="229" y="376" width="148" height="100"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hc0-xh-gRf">
-                            <rect key="frame" x="12" y="12" width="124" height="64"/>
+                            <rect key="frame" x="12" y="12" width="124" height="76"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <string key="text">This
 season’s
 latest</string>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <fontDescription key="fontDescription" name="STIXTwoText_Bold" family="STIX Two Text" pointSize="22"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstItem="Hc0-xh-gRf" firstAttribute="leading" secondItem="cSF-5r-c4O" secondAttribute="leading" constant="12" id="BM3-nJ-mkq"/>
                         <constraint firstItem="Hc0-xh-gRf" firstAttribute="top" secondItem="cSF-5r-c4O" secondAttribute="top" constant="12" id="BVx-PD-tmX"/>
                         <constraint firstAttribute="bottom" secondItem="Hc0-xh-gRf" secondAttribute="bottom" constant="12" id="Owo-UW-Cec"/>
                         <constraint firstAttribute="trailing" secondItem="Hc0-xh-gRf" secondAttribute="trailing" constant="12" id="aPp-ia-QXV"/>
-                        <constraint firstAttribute="height" constant="88" id="as5-p0-w6g"/>
+                        <constraint firstAttribute="height" constant="100" id="as5-p0-w6g"/>
                         <constraint firstAttribute="width" constant="148" id="thi-Hl-nZV"/>
                     </constraints>
                 </view>
@@ -50,7 +51,7 @@ latest</string>
                     </constraints>
                     <color key="tintColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <state key="normal" title="Button"/>
-                    <buttonConfiguration key="configuration" style="plain" image="arrowshape.right.fill" catalog="system" cornerStyle="fixed"/>
+                    <buttonConfiguration key="configuration" style="plain" image="Group 46" cornerStyle="fixed"/>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XUS-aA-8hY">
                     <rect key="frame" x="287" y="792" width="44" height="44"/>
@@ -61,7 +62,7 @@ latest</string>
                     </constraints>
                     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <state key="normal" title="Button"/>
-                    <buttonConfiguration key="configuration" style="plain" image="arrowshape.left.fill" catalog="system" cornerStyle="fixed"/>
+                    <buttonConfiguration key="configuration" style="plain" image="Group 45" cornerStyle="fixed"/>
                 </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
@@ -86,8 +87,9 @@ latest</string>
         </view>
     </objects>
     <resources>
-        <image name="arrowshape.left.fill" catalog="system" width="128" height="104"/>
-        <image name="arrowshape.right.fill" catalog="system" width="128" height="104"/>
+        <image name="Group 45" width="51" height="51"/>
+        <image name="Group 46" width="51" height="51"/>
+        <image name="headerPhoto" width="351" height="195"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
