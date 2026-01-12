@@ -20,9 +20,7 @@ class MainTabBarController: UITabBarController {
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let home = storyboard.instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
-
-        let search = SearchViewController()
-//        let wishList = WishListViewController()
+        let search = storyboard.instantiateViewController(withIdentifier: "SearchViewController") as! SearchViewController
         let wishList = storyboard.instantiateViewController(withIdentifier: "WishListViewController") as! WishListViewController
         
         let cart = CartViewController()

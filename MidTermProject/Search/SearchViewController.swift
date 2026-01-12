@@ -1,5 +1,5 @@
 //
-//  HomeViewController.swift
+//  SearchViewController.swift
 //  MidTermProject
 //
 //  Created by user on 06.01.26.
@@ -7,41 +7,38 @@
 
 import UIKit
 
-class HomeViewController: UIViewController {
-  
+class SearchViewController: UIViewController {
+
+    @IBOutlet weak var searchBar: UISearchBar!
     
     @IBOutlet weak var collection: UICollectionView!
-    private let wishViewModel = WishListViewModel()
-    private var products = [Product]()
-    private let dataManager = DataManager()
     
+    private let viewModel = SearchViewModel()
+    private let wishViewModel = WishListViewModel()
     override func viewDidLoad() {
         super.viewDidLoad()
+        searchBar.delegate = self
         collection.delegate = self
         collection.dataSource = self
         collection.register(UINib(nibName: "ProductCell", bundle: nil), forCellWithReuseIdentifier: "ProductCell")
-        products = dataManager.getBagzItems()
+        viewModel.loadProduct()
     }
-    
-    
 }
 
-extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
-    
+extension SearchViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UISearchBarDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        products.count
+        viewModel.filteredProducts.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ProductCell", for: indexPath) as! ProductCell
-        let product = products[indexPath.row]
+        let cell = collection.dequeueReusableCell(withReuseIdentifier: "ProductCell", for: indexPath) as! ProductCell
+        let product = viewModel.filteredProducts[indexPath.row]
         let isLiked = wishViewModel.items.contains {
-            $0.productId == Int64(product.id)
-        }
+                $0.productId == Int64(product.id)
+            }
         cell.configureUI(product: product, isLiked: isLiked)
         cell.onHeartTapped = { [weak self] productId, isLiked in
-            guard let self = self else { return }
-            
+                guard let self = self else { return }
             if isLiked {
                 self.wishViewModel.addItem(
                     productId: Int64(productId),
@@ -53,17 +50,16 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
                 )
             }
         }
-        
         return cell
     }
-
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         .init(width: 168, height: 240)
     }
     
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let product = products[indexPath.row]
-        print(product.name)
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        viewModel.search(text: searchText)
+        collection.reloadData()
     }
+    
 }
-
