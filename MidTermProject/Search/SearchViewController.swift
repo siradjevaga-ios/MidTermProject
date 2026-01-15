@@ -28,6 +28,13 @@ class SearchViewController: UIViewController {
         viewModel.loadProduct()
 
     }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        wishViewModel.fetchItems()
+        collection.reloadData()
+    }
+
     
     @IBAction func addToCartTapped(_ sender: Any) {
         let selectedProducts = viewModel.filteredProducts.filter { selectedCartProductIds.contains($0.id) }

@@ -39,6 +39,14 @@ class HomeViewController: UIViewController {
         ])
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        wishViewModel.fetchItems()
+        collection.reloadData()
+    }
+
+    
     
     
     @IBAction func addToCartTapped(_ sender: Any) {
