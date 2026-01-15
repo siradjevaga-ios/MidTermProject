@@ -11,6 +11,9 @@ class CartViewModel {
     private(set) var cartProducts: [Product] = []
     
     func addProduct(product: Product) {
+        if cartProducts.contains(where: { $0.id == product.id }) {
+            return
+        }
         cartProducts.append(product)
     }
     
@@ -21,4 +24,8 @@ class CartViewModel {
     func numberOfItems() -> Int {
         cartProducts.count
     }
+    func product(at index: Int) -> Product {
+        cartProducts[index]
+    }
+
 }

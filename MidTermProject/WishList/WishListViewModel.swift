@@ -24,7 +24,12 @@ class WishListViewModel {
         }
     }
     
-     func addItem(productId: Int64, userId: Int64) {
+    func addItem(productId: Int64, userId: Int64) {
+        if items.contains(where: { $0.productId == productId && $0.userId == userId }) {
+            return
+        }
+        
+        
         let item = WishEntity(context: context)
         item.productId = productId
         item.userId = userId

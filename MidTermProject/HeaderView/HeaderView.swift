@@ -11,13 +11,10 @@ final class HeaderView: UIView {
     
     
     @IBOutlet weak var backgroundImageView: UIImageView!
-    @IBOutlet weak var titleLabel: UILabel!
-    static func load(title: String, imageName: String, height: CGFloat) -> HeaderView {
+    static func load(imageName: String) -> HeaderView {
         let view = Bundle.main.loadNibNamed("HeaderView", owner: nil, options: nil)?.first as! HeaderView
-        view.titleLabel.text = title
         view.backgroundImageView.image = UIImage(named: imageName)
         view.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([view.heightAnchor.constraint(equalToConstant: height)])
         return view
     }
 }

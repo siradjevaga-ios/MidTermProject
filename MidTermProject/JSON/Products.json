@@ -26,7 +26,33 @@
     "price": "$1638",
     "imageName": "monogram_bag",
     "description": "Iconic monogram style handbag with spacious interior."
+  },
+  {
+    "id": 5,
+    "name": "City Loop",
+    "price": "$742",
+    "imageName": "cityloop_bag",
+    "description": "Compact shoulder bag with a clean silhouette and daily comfort."
+  },
+  {
+    "id": 6,
+    "name": "Noé",
+    "price": "$899",
+    "imageName": "noe_bag",
+    "description": "Bucket-style bag with a soft shape and roomy interior."
+  },
+  {
+    "id": 7,
+    "name": "Twist",
+    "price": "$1150",
+    "imageName": "twist_bag",
+    "description": "Modern structured bag with signature hardware and smooth finish."
+  },
+  {
+    "id": 8,
+    "name": "Speedy",
+    "price": "$980",
+    "imageName": "speedy_bag",
+    "description": "Everyday classic handbag with durable design and timeless style."
   }
 ]
-
-
