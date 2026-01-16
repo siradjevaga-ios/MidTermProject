@@ -20,27 +20,36 @@ class LoginController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
-        emailTextField.text = UserDefaults.standard.string(forKey: "emailSaved")
-        passwordTextField.text = UserDefaults.standard.string(forKey: "passwordSaved")
+//        emailTextField.text = UserDefaults.standard.string(forKey: "emailSaved")
+//        passwordTextField.text = UserDefaults.standard.string(forKey: "passwordSaved")
     }
 
 
     @IBAction func loginTapped(_ sender: Any) {
-        guard let email = emailTextField.text,
-              let password = passwordTextField.text,
-              let savedEmail = UserDefaults.standard.string(forKey: "emailSaved"),
-              let savedPassword = UserDefaults.standard.string(forKey: "passwordSaved")
-        else { return showAlert(message: "Please sign up first")}
-        if email == savedEmail, password == savedPassword {
+        guard let email = emailTextField.text, !email.isEmpty,
+              let password = passwordTextField.text, !password.isEmpty else {
+            showAlert(message: "Please fill all fields")
+            return
+        }
+        
+        let users = loadUsers()
+        
+        let isValid = users.contains {
+            $0.email.lowercased() == email.lowercased() &&
+            $0.password == password
+        }
+        
+        if isValid {
             UserDefaults.standard.set(true, forKey: "isLoggedIn")
-            if let windowScene =  UIApplication.shared.connectedScenes.first as? UIWindowScene,
-                let sceneDelegate = windowScene.delegate as? SceneDelegate {
+            
+            if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+               let sceneDelegate = windowScene.delegate as? SceneDelegate {
                 sceneDelegate.window?.rootViewController = MainTabBarController()
             }
+            
         } else {
             showAlert(message: "Wrong email or password")
         }
-        
         
     }
     
@@ -52,9 +61,24 @@ class LoginController: UIViewController {
     
     func showAlert(message: String) {
         let alert = UIAlertController(title: "Login error", message: message, preferredStyle: .alert)
-        let action = UIAlertAction(title: "OK", style: .cancel)
+        let action = UIAlertAction(title: "OK", style: .destructive)
         alert.addAction(action)
         
         present(alert, animated: true)
     }
+    
+    private func getFilePath() -> URL {
+        let urls = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+        return urls[0].appendingPathComponent("Users.json")
+    }
+
+    private func loadUsers() -> [User] {
+        do {
+            let data = try Data(contentsOf: getFilePath())
+            return try JSONDecoder().decode([User].self, from: data)
+        } catch {
+            return []
+        }
+    }
+
 }
