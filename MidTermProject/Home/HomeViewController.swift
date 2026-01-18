@@ -13,8 +13,7 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var collection: UICollectionView!
     
     @IBOutlet weak var addToCartButton: UIButton!
-//    private var selectedProductForCart: Product?
-//    private var shouldShowAddToCartButton = false
+
     private var selectedCartProductIds = Set<Int>()
 
     private let wishViewModel = WishListViewModel()

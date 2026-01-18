@@ -85,7 +85,7 @@
                 <outlet property="nameLabel" destination="liZ-0w-s1Z" id="WCU-0h-r2V"/>
                 <outlet property="priceLabel" destination="O9P-QB-AeJ" id="8z3-uE-jBT"/>
             </connections>
-            <point key="canvasLocation" x="522.90076335877859" y="48.943661971830991"/>
+            <point key="canvasLocation" x="-18" y="-36"/>
         </collectionViewCell>
     </objects>
     <resources>
