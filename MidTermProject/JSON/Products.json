@@ -4,55 +4,63 @@
     "name": "Artsy",
     "price": "$564",
     "imageName": "artsy_bag",
-    "description": "Wallet with chain. Elegant design with premium leather."
+    "description": "Wallet with chain. Elegant design with premium leather.",
+    "detailDescription": "As in handbags, the double ring and bar design defines the wallet shape, highlighting the front flap closure which is tucked inside the hardware. Completed with an organizational interior, the black leather wallet features a detachable chain.\n\nMaterials & care:\n-All products are made with carefully selected materials. Please handle with care for longer product life.\n- Protect from direct light, heat and rain. Should it become wet, dry it immediately with a soft cloth\n- Store in the provided flannel bag or box\n- Clean with a soft, dry cloth"
   },
   {
     "id": 2,
     "name": "Berkely",
     "price": "$638",
     "imageName": "berkely_bag",
-    "description": "Classic handbag with modern details and solid finish."
+    "description": "Classic handbag with modern details and solid finish.",
+    "detailDescription": "A classic silhouette redesigned with modern lines and durable construction. Berkely is made for everyday wear with a comfortable handle and balanced proportions.\n\nMaterials & care:\n- Avoid prolonged contact with water\n- Keep away from heat sources\n- Wipe with a clean dry cloth after use\n- Store in dust bag when not in use"
   },
   {
     "id": 3,
     "name": "Capucinus",
     "price": "$1298",
     "imageName": "capucinus_bag",
-    "description": "Luxury bag crafted from high quality materials."
+    "description": "Luxury bag crafted from high quality materials.",
+    "detailDescription": "Capucinus is crafted with premium materials and a structured body designed to hold its shape beautifully. Its elegant lines and refined finish make it perfect for special occasions or elevated daily looks.\n\nMaterials & care:\n- Protect from direct light, heat and moisture\n- If wet, dry immediately with a soft cloth\n- Do not overload to preserve shape\n- Store in box or flannel bag"
   },
   {
     "id": 4,
     "name": "Monogram",
     "price": "$1638",
     "imageName": "monogram_bag",
-    "description": "Iconic monogram style handbag with spacious interior."
+    "description": "Iconic monogram style handbag with spacious interior.",
+    "detailDescription": "An iconic monogram handbag designed with a spacious interior and a timeless profile. The bag offers excellent capacity while keeping a clean and luxurious look.\n\nMaterials & care:\n- Keep away from rough surfaces to avoid scratches\n- Clean gently with a soft dry cloth\n- Avoid direct sunlight for long periods\n- Store in dust bag to protect the surface"
   },
   {
     "id": 5,
     "name": "City Loop",
     "price": "$742",
     "imageName": "cityloop_bag",
-    "description": "Compact shoulder bag with a clean silhouette and daily comfort."
+    "description": "Compact shoulder bag with a clean silhouette and daily comfort.",
+    "detailDescription": "City Loop is a compact shoulder bag built for daily movement. Its clean silhouette and lightweight feel make it ideal for city life, errands, and travel.\n\nMaterials & care:\n- Avoid water exposure\n- Do not place heavy items inside\n- Clean with a dry microfiber cloth\n- Store in dust bag when not used"
   },
   {
     "id": 6,
     "name": "Noé",
     "price": "$899",
     "imageName": "noe_bag",
-    "description": "Bucket-style bag with a soft shape and roomy interior."
+    "description": "Bucket-style bag with a soft shape and roomy interior.",
+    "detailDescription": "Noé is a bucket-style bag with a soft shape and a roomy interior. It’s designed for flexibility, comfort, and easy access to essentials.\n\nMaterials & care:\n- Keep away from sharp objects\n- Avoid overfilling to prevent stretching\n- Dry-clean only with a soft cloth\n- Store upright to keep the shape"
   },
   {
     "id": 7,
     "name": "Twist",
     "price": "$1150",
     "imageName": "twist_bag",
-    "description": "Modern structured bag with signature hardware and smooth finish."
+    "description": "Modern structured bag with signature hardware and smooth finish.",
+    "detailDescription": "Twist features a modern structured body with signature hardware and a smooth finish. It’s made for a polished look and elegant styling.\n\nMaterials & care:\n- Avoid perfumes and alcohol-based products touching the surface\n- Keep hardware clean and dry\n- Wipe gently after use\n- Store in original packaging when possible"
   },
   {
     "id": 8,
     "name": "Speedy",
     "price": "$980",
     "imageName": "speedy_bag",
-    "description": "Everyday classic handbag with durable design and timeless style."
+    "description": "Everyday classic handbag with durable design and timeless style.",
+    "detailDescription": "Speedy is a timeless everyday handbag designed for comfort and durability. It carries everything you need while keeping a classic, balanced shape.\n\nMaterials & care:\n- Avoid heavy moisture and rain\n- Clean with a soft dry cloth\n- Do not store in plastic bags\n- Keep in a dust bag to protect the finish"
   }
 ]

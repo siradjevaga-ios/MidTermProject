@@ -13,5 +13,6 @@ struct Product: Codable {
     let price: String
     let imageName: String
     let description: String
+    let detailDescription: String
     
 }

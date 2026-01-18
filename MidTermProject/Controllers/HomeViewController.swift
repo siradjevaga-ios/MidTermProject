@@ -8,7 +8,7 @@
 import UIKit
 
 class HomeViewController: UIViewController {
-  
+      
     
     @IBOutlet weak var collection: UICollectionView!
     
@@ -122,10 +122,11 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
         let product = products[indexPath.row]
         let details = ProductDetailViewController(product: product)
        if let sheet = details.sheetPresentationController {
-           sheet.detents = [.medium(), .large()]
+           sheet.detents = [.large()]
            sheet.prefersGrabberVisible = true
         }
         present(details, animated: true)
+        
     }
 }
 
