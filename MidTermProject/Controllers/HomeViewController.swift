@@ -37,6 +37,24 @@ class HomeViewController: UIViewController {
             header.trailingAnchor.constraint(equalTo: view.trailingAnchor),
    
         ])
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "person.crop.circle"), style: .plain, target: self, action:  #selector(logoutTapped))
+    }
+    
+    @objc func logoutTapped() {
+        let alert = UIAlertController(title: "Log Out", message: nil, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .cancel))
+        alert.addAction(UIAlertAction(title: "Log Out", style: .destructive, handler: { _ in
+            UserDefaults.standard.set(false, forKey: "isLoggedIn")
+            if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+               let sceneDelegate = windowScene.delegate as? SceneDelegate {
+                let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LoginController") as! LoginController
+                sceneDelegate.window?.rootViewController = UINavigationController(rootViewController: vc)
+                
+            }
+        }))
+        
+        present(alert, animated: true)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -102,11 +120,12 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let product = products[indexPath.row]
-        print(product.name)
+        let details = ProductDetailViewController(product: product)
+       if let sheet = details.sheetPresentationController {
+           sheet.detents = [.medium(), .large()]
+           sheet.prefersGrabberVisible = true
+        }
+        present(details, animated: true)
     }
-
-
-    
-   
 }
 

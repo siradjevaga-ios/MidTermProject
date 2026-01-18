@@ -69,16 +69,24 @@ class LoginController: UIViewController {
     
     private func getFilePath() -> URL {
         let urls = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+        print(urls)
         return urls[0].appendingPathComponent("Users.json")
+        
     }
 
     private func loadUsers() -> [User] {
         do {
             let data = try Data(contentsOf: getFilePath())
+       
             return try JSONDecoder().decode([User].self, from: data)
         } catch {
             return []
         }
+    }
+    
+     func fillFields(email: String, password: String) {
+        emailTextField.text = email
+        passwordTextField.text = password
     }
 
 }

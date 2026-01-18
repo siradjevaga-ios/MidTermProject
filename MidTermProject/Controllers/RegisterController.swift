@@ -54,10 +54,11 @@ class RegisterController: UIViewController {
             return
         }
         
-        if users.contains(where: { $0.email?.lowercased() == email.lowercased() }) {
+        if users.contains(where: { $0.email.lowercased() == email.lowercased() }) {
             let alert = UIAlertController(title: "Error", message: "This user already exists", preferredStyle: .alert)
             let action = UIAlertAction(title: "OK", style: .destructive)
             alert.addAction(action)
+            present(alert, animated: true)
                 return
             }
         
@@ -65,8 +66,12 @@ class RegisterController: UIViewController {
         users.append(user)
         saveData()
         
+        if let loginVC = navigationController?.viewControllers.first(where: { $0 is LoginController }) as? LoginController {
+            loginVC.fillFields(email: email, password: password)
+        }
+        navigationController?.popViewController(animated: true)
 
-        
+
     }
     
 
